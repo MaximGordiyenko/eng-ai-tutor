@@ -3,6 +3,9 @@ name: Generate Backlog Issues
 # 🧩 Only run when manually triggered
 on:
   workflow_dispatch:
+  
+permissions:
+  issues: write
 
 jobs:
   create_issues:
