@@ -3,7 +3,7 @@ epics:
     description: >
       Create adaptive lessons that adjust to each user's skill level, goals, and progress.
     labels: ["epic", "learning-paths"]
-    issues:
+    features:
       - title: Implement user skill level assessment
         description: >
           Create onboarding quiz and analysis logic to determine user's English proficiency (A1–C2).
@@ -21,7 +21,7 @@ epics:
     description: >
       Enable users to chat or speak with an AI tutor to improve fluency and comprehension.
     labels: ["epic", "ai-tutor"]
-    issues:
+    features:
       - title: Integrate AI chat API
         description: >
           Connect to GPT-like model for contextual conversation practice.
@@ -39,7 +39,7 @@ epics:
     description: >
       Provide real-time pronunciation feedback using speech recognition and phoneme analysis.
     labels: ["epic", "speech"]
-    issues:
+    features:
       - title: Integrate speech-to-text engine
         description: >
           Use native speech recognition APIs (Google / Apple) for transcription.
@@ -57,7 +57,7 @@ epics:
     description: >
       Smart flashcard system with spaced repetition and contextual learning examples.
     labels: ["epic", "vocabulary"]
-    issues:
+    features:
       - title: Implement SRS algorithm for review scheduling
         description: >
           Use a modified SM2 algorithm to calculate review intervals.
@@ -75,7 +75,7 @@ epics:
     description: >
       Help users visualize their improvement and stay motivated.
     labels: ["epic", "tracking"]
-    issues:
+    features:
       - title: Implement user progress database schema
         description: >
           Store lesson completion, quiz results, and speaking scores.
@@ -93,7 +93,7 @@ epics:
     description: >
       Create an elegant dark theme for distraction-free night learning.
     labels: ["epic", "theme"]
-    issues:
+    features:
       - title: Implement global dark mode toggle
         description: >
           Add a toggle and persist user theme preference.
@@ -107,7 +107,7 @@ epics:
     description: >
       Ensure the app works seamlessly on both iOS and Android.
     labels: ["epic", "mobile"]
-    issues:
+    features:
       - title: Configure React Native environment for both platforms
         description: >
           Set up and test builds on Android and iOS using Expo or native tooling.
