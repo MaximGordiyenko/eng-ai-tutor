@@ -1,5 +1,48 @@
 epics:
-  - name: "Core Application Setup"
-    description: "Setup project structure, navigation, and base configuration."
+  - name: "Personalized Learning Paths"
+    description: "Create adaptive lessons that adjust to each user's skill level, goals, and progress."
     features:
-      - "Format Readme file"
+      - "Implement user skill level assessment"
+      - "Build adaptive lesson recommendation engine"
+      - "Integrate goal-based learning preferences"
+  
+  - name: "AI Conversation Partner"
+    description: "Enable users to chat or speak with an AI tutor to improve fluency and comprehension."
+    features:
+      - "Integrate AI chat API"
+      - "Topic-based conversation modules"
+      - "Add conversation history and correction feature"
+  
+  - name: "Speech Recognition & Pronunciation Feedback"
+    description: "Provide real-time pronunciation feedback using speech recognition and phoneme analysis."
+    features:
+      - "Integrate speech-to-text engine"
+      - "Implement pronunciation feedback system"
+      - "Display visual pronunciation feedback"
+  
+  - name: "Vocabulary Builder"
+    description: "Smart flashcard system with spaced repetition and contextual learning examples."
+    features:
+      - "Implement SRS algorithm for review scheduling"
+      - "Build flashcard creation and editing UI"
+      - "Add example sentences and AI-generated synonyms"
+  
+  - name: "Progress Tracking"
+    description: "Help users visualize their improvement and stay motivated."
+    features:
+      - "Implement user progress database schema"
+      - "Build progress dashboard with charts"
+      - "Add achievement badges and streak reminders"
+  
+  - name: "Dark Mode"
+    description: "Create an elegant dark theme for distraction-free night learning."
+    features:
+      - "Implement global dark mode toggle"
+      - "Optimize color palette for accessibility"
+  
+  - name: "Cross-Platform Support"
+    description: "Ensure the app works seamlessly on both iOS and Android."
+    features:
+      - "Configure React Native environment for both platforms"
+      - "Fix platform-specific UI inconsistencies"
+      - "Optimize performance and offline caching"
