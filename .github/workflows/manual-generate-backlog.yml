@@ -1,0 +1,62 @@
+name: Generate Backlog Issues
+
+# 🧩 Only run when manually triggered
+on:
+  workflow_dispatch:
+
+jobs:
+  create_issues:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+      
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      
+      - name: Install dependencies
+        run: npm install js-yaml axios
+      
+      - name: Run backlog issue generator
+        env:
+          GITHUB_TOKEN: ${{ secrets.ENG_LEARN_APP }}
+          REPO: ${{ github.repository }}
+        run: |
+          node <<'EOF'
+          import fs from 'fs';
+          import yaml from 'js-yaml';
+          import axios from 'axios';
+          
+          const backlogPath = 'backlog/project_issues.yaml';
+          const backlog = yaml.load(fs.readFileSync(backlogPath, 'utf8'));
+          const token = process.env.GITHUB_TOKEN;
+          const repo = process.env.REPO;
+          const [owner, repoName] = repo.split('/');
+          
+          async function createIssue(title, body, labels) {
+            try {
+              const res = await axios.post(
+              `https://api.github.com/repos/${owner}/${repoName}/issues`,
+              { title, body, labels },
+              { headers: { Authorization: `token ${token}` } }
+            );
+              console.log(`✅ Created issue: ${title}`);
+              return res.data.number;
+            } catch (err) {
+              console.error(`❌ Failed to create issue: ${title}`);
+              console.error(err.response?.data || err.message);
+            }
+          }
+          
+          (async () => {
+          for (const epic of backlog.epics) {
+            for (const feature of epic.features) {
+              const body = `**Epic:** ${epic.name}\n\n${epic.description}`;
+                await createIssue(feature, body, [epic.name]);
+            }
+          }
+          })();
+          EOF
